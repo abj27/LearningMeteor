@@ -21,7 +21,9 @@ if (Meteor.isClient) {
 			Todos.update(this._id, {$set:{checked: !this.checked}});
 		},
 		"click .delete-todo": function(){
-			Todos.remove(this._id);
+			if(confirm("Are you sure?")){
+				Todos.remove(this._id);
+			}
 		}
 	});
 }
