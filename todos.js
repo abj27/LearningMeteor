@@ -19,6 +19,9 @@ if (Meteor.isClient) {
 		},
 		"click .toggle-checked": function(){
 			Todos.update(this._id, {$set:{checked: !this.checked}});
+		},
+		"click .delete-todo": function(){
+			Todos.remove(this._id);
 		}
 	});
 }
