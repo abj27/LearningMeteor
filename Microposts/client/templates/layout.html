@@ -3,7 +3,13 @@
 </body>
 
 <template name="layout">
-	<p> This is the layout </p>
 	{{> navbar}}
-	{{> yield}}
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				{{> yield}}
+			</div>
+		</div>
+
+	</div>
 </template>
