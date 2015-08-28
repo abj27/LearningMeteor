@@ -1,9 +1,10 @@
 <template name="posts">
 <!-- Button trigger modal -->
+{{#if currentUser}}
 <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#postModal">
-	Launch demo modal
+	Say something
 </button>
-
+{{/if}}
 <!-- Modal -->
 <div class="modal fade" id="postModal" tabindex="-1" role="dialog" aria-labelledby="myPostModalLabel">
 	<div class="modal-dialog" role="document">
@@ -12,47 +13,31 @@
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
-				<h4 class="modal-title" id="myPostModalLabel">Posts</h4>
+				<h4 class="modal-title" id="myPostModalLabel">Add posts</h4>
 			</div>
 			<div class="modal-body">
-				...
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-				<button type="button" class="btn btn-primary">Save changes</button>
+			{{#autoForm collection="Posts" id="insertPostForm" type="insert"}}
+					{{> afQuickField name ="body" rows=4}}
+					<button type="submit" class="btn btn-primary">Save changes</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			{{/autoForm}}
 			</div>
 		</div>
 	</div>
 </div>
 <hr/>
+{{#each posts}}
 <div class="row post">
 	<div class="col-sm-2">
-		<img src="img/profile.jpg">
+		<img src="{{getProfileImage userId}}">
 	</div>
 	<div class ="col-sm-10">
-		<small> Posted by me at 07-11-2015 </small>
-		<p> This is the posts </p>
+		<small> Posted by {{username}} at {{createdAt}}</small>
+		<p>{{body}} </p>
 
 	</div>
 </div>
-<div class="row post">
-	<div class="col-sm-2">
-		<img src="img/profile.jpg">
-	</div>
-	<div class ="col-sm-10">
-		<small> Posted by me at 07-11-2015 </small>
-		<p> This is the posts </p>
-
-	</div>
-</div>
-<div class="row post">
-	<div class="col-sm-2">
-		<img src="img/profile.jpg">
-	</div>
-	<div class ="col-sm-10">
-		<small> Posted by me at 07-11-2015 </small>
-		<p> This is the posts </p>
-
-	</div>
-</div>
+{{else}}
+	<p> No Posts </p>
+{{/each}}
 </template>

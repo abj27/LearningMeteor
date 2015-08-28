@@ -15,9 +15,14 @@
 			  <li class="active"><a href="{{pathFor 'posts'}}">Home</a></li>
 			  <li><a href="{{pathFor 'about'}}">About</a></li>
           </ul>
-		  <ul class="nav nabvar-nav navbar-right">
-			  <li> <a href="sign-in">Sign In</a></li>
-			  <li> <a href="profile">Edit Profile</a></li>
+		  <ul class="nav navbar-nav navbar-right">
+			  {{#if currentUser}}
+				  <li> <a href="profile">Edit Profile</a></li>
+				  <li> <a href="sign-out">Sign Out</a></li>
+			  {{else}}
+				  <li> <a href="sign-up">Sign Up</a></li>
+				  <li> <a href="sign-in">Sign In</a></li>
+			  {{/if}}
 		  </ul>
         </div><!--/.nav-collapse -->
       </div>

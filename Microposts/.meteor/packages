@@ -12,3 +12,8 @@ twbs:bootstrap
 accounts-ui
 accounts-password
 joshowens:accounts-entry
+cfs:standard-packages
+cfs:gridfs
+aldeed:simple-schema
+aldeed:collection2
+aldeed:autoform
