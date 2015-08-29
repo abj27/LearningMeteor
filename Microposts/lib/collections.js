@@ -4,6 +4,17 @@ ProfileImages = new FS.Collection("ProfileImages", {
 
 UserImages = new Mongo.Collection("UserImages");
 
+ProfileImages.allow({
+	insert:function(userId,doc){
+		return true;
+	},
+	update:function(userId,doc,fields,modifier){
+		return true;
+	},
+	downloads:function(){
+		return true;
+	}
+}); 
 Posts = new Mongo.Collection("posts");
 Posts.attachSchema(new SimpleSchema({
 	body:{
