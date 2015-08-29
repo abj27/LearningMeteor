@@ -1,0 +1,17 @@
+<body>
+	{{renderPage}}
+</body>
+<template name="layout">
+	{{> navbar}}
+
+	<div class ="row" id="app-container">
+		<div class="medium-12 columns">
+			{{> yield}}
+		</div>
+	</div>
+	<script>
+		$(document).ready(function(){
+			$(document).foundation();
+		});
+	</script>
+</template>
