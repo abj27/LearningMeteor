@@ -11,7 +11,7 @@ ProfileImages.allow({
 	update:function(userId,doc,fields,modifier){
 		return true;
 	},
-	downloads:function(){
+	download:function(){
 		return true;
 	}
 }); 
@@ -40,3 +40,8 @@ Posts.attachSchema(new SimpleSchema({
 		}
 	}
 }));
+Posts.allow({
+	insert:function(userId,post){
+		return true;
+	}
+}); 
