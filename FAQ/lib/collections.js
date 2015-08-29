@@ -6,7 +6,7 @@ Questions.attachSchema(new SimpleSchema({
 		max: 500,
 		optional: false
 	},
-	Answer:{
+	answer:{
 		type: String,
 		label:"Answer",
 		optional: false
