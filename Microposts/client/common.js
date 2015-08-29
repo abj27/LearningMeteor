@@ -1,3 +1,6 @@
+Meteor.subscribe("Posts");
+Meteor.subscribe("ProfileImages");
+Meteor.subscribe("UserImages");
 Meteor.startup(function(){
 	AccountsEntry.config({
 		homeRoute: '/',
@@ -14,3 +17,5 @@ Template.registerHelper('getProfileImage', function(userId){
 	var imageData= UserImages.findOne({userId: userId});
 	return imageData&&imageData.image;
 });
+
+
