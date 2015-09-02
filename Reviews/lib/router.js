@@ -25,4 +25,15 @@ Router.map(function(){
 			return templateData;
 		}
 	});
+
+	this.route('add_product',{
+		path:'/add_product',
+		template:'add_product',
+		data:function(){
+			templateData = {
+				categories: Categories.find()
+			};
+			return templateData;
+		}
+	});
 });
