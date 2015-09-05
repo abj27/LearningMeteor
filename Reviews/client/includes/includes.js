@@ -5,5 +5,13 @@ Template.sidebar.helpers({
 				name:1
 			}
 		});
-	}
+	},
+
+	products: function(){
+		return Categories.find({},{
+			sort:{
+				name:1
+			}
+		});
+	},
 });
