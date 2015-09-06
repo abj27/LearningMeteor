@@ -10,18 +10,27 @@ Template.add_product.events({
 			var fsFile = new FS.File(file);
 			ProductsImages.insert(fsFile, function(err,result){
 				if(!err){
-					productImage = "/cfs/files/ProductsImages"+result._id;
+					productImage = "/cfs/files/productsImages/"+result._id;
+					Products.insert({
+						name: name,
+						category: category,
+						description: description,
+						is_featured: isFeatured, 
+						image: productImage,
+						createdAt: new Date()
+					});
 				}
 			});
+		}else{
+			Products.insert({
+				name: name,
+				category: category,
+				description: description,
+				is_featured: isFeatured, 
+				image: productImage,
+				createdAt: new Date()
+			});
 		}
-		Products.insert({
-			name: name,
-			category: category,
-			description: description,
-			is_featured: isFeatured, 
-			image: productImage,
-			createdAt: new Date()
-		});
 		event.target.name.value ="";
 		event.target.category.value ="";
 		event.target.description.value ="";

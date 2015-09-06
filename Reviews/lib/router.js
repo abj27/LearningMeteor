@@ -36,4 +36,25 @@ Router.map(function(){
 			return templateData;
 		}
 	});
+
+	this.route('products_category',{
+		path:'/categories/:slug',
+		template:'products_category',
+		data:function(){
+			templateData = {
+				products: Products.find({
+					category: this.params.slug
+				})
+			};
+			return templateData;
+		}
+	});
+
+	this.route('new_review',{
+		path:'/new-review/:_id',
+		template:'new_review',
+		data:function(){
+			return Products.findOne(this.params._id);
+		}
+	});
 });
