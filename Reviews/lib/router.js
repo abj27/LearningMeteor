@@ -57,4 +57,12 @@ Router.map(function(){
 			return Products.findOne(this.params._id);
 		}
 	});
+
+	this.route('product',{
+		path:'/products/:_id',
+		template:'product',
+		data:function(){
+			return Products.findOne(this.params._id);
+		}
+	});
 });
