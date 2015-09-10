@@ -15,7 +15,9 @@
 </div>
 <div class="row">
 	<div class="col-sm-12 text-right">
+		{{#if currentUser}}
 		<a href="{{pathFor 'new_review'}}" class="btn btn-primary">Leave Review</a>
+		{{/if}}
 	</div>
 </div>
 <hr>

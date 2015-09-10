@@ -12,8 +12,7 @@ var onBeforeActions = {
 	}
 };
 Router.onBeforeAction(onBeforeActions.loginRequired,{
-
-	only:["add_product"]
+	only:["add_product, new_review"]
 });
 Router.map(function(){
 	this.route('home',{
