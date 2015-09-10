@@ -24,12 +24,12 @@
 <h4> Reviews & Ratings </h4>
 {{#each reviews}}
 <div class="row">
-	<div class="col-sm-10">
+	<div class="col-sm-8">
 		<img class="stars" src="/img/{{rating}}star.png">
 		{{body}}
 	</div>
-	<div class="col-sm-2">
-		{{review_date}}
+	<div class="col-sm-4">
+		{{formatDate date}}
 	</div>
 </div>
 <br>

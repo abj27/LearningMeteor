@@ -24,3 +24,7 @@ Template.registerHelper("getReviewsTotal", function(total){
 		return 0;
 	}
 });
+
+Template.registerHelper("formatDate", function(date){
+	return moment(date).format("MM-DD-YYYY");
+});

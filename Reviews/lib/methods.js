@@ -8,5 +8,16 @@ Meteor.methods({
 		image: fileUrl,
 		createdAt: new Date()
 		});
+	},
+	addReview:function(id,rating,body){
+		Products.update({_id:id	},
+		{$push:{
+				reviews:{
+					rating: rating,
+					body: body,
+					date: new Date()
+				}
+			}
+		});
 	}
 });
