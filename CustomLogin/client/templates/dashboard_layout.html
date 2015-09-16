@@ -1,0 +1,12 @@
+<template name="dashboard_layout">
+<div class="container">
+	{{ > navbar }}
+	<div class="col-sm-12">
+		{{> flashMessages}}
+		{{> yield}}
+	</div>
+	<footer class="footer">
+		<p>&copy; Company 2014</p>
+	</footer>
+</div> <!-- /container -->
+</template>

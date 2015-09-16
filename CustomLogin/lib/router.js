@@ -7,7 +7,10 @@ Router.map(function(){
 		path:"/",
 		template:"login"
 	});
-}); 
-Router.map(function(){
 	this.route("register");
-});
+	this.route("dashboard",{
+		layoutTemplate:"dashboard_layout",
+		path:"/dashboard",
+		template:"dashboard"
+	});
+}); 

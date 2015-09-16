@@ -28,8 +28,8 @@ Template.register.events({
 					Router.go("/dashboard");
 				}
 			});
-			return false;
 		}					  
+		return false;
 	}
 });
 
