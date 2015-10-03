@@ -1,0 +1,37 @@
+<template name="departments">
+	<div class="panel panel-primary ticket-table">
+		<div class="panel-heading">
+			<h3 class="panel-title">Manage Departments</h3>
+		</div>
+		<div class="panel-body">
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th with=120>#</th>
+						<th>Name</th>
+						<th>Dept Head</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					{{#each departments}}
+						<tr>
+							<td>{{_id}}</td>
+							<td>{{name}}</td>
+							<td>{{head}}</td>
+							<td>
+								<a href="#" class="btn btn-danger btn-tiny delete-department">
+									Delete
+								</a>
+							</td>
+						</tr>
+						{{else}}
+						<tr>
+							<td rowspan="3">There are no departments created</td>
+						</tr>
+					{{/each}}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</template>
